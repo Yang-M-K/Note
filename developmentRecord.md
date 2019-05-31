@@ -357,6 +357,18 @@ tail  -f  /usr/tomcat/apache-tomcat-8.5.41/logs/catalina.out  日志
 - @AllArgsContructor： ?会生成一个包含所有变量
 - @RequiredArgsConstructor： 也是在类上使用，但是这个注解可以生成带参或者不带参的构造方法。 若带参数，只能是类中所有带有 @NonNull注解的和以final修饰的未经初始化的字段
 
+## 2、spring
+
+### 2.1EnableConfigurationProperties注解
+
+ConfigurationProperties+Component注解可将yml的值导入java属性中如：
+
+![1559272538344](C:\Users\Administration\AppData\Roaming\Typora\typora-user-images\1559272538344.png)
+
+EnableConfigurationProperties可替代component注解 如：
+
+![1559272482076](C:\Users\Administration\AppData\Roaming\Typora\typora-user-images\1559272482076.png)
+
 # 七、零散Web知识
 
 ## 1、request
