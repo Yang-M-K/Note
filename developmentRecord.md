@@ -346,3 +346,29 @@ kill -9 进程名称
 ## 3、查看启动日志
 
 tail  -f  /usr/tomcat/apache-tomcat-8.5.41/logs/catalina.out  日志
+
+
+
+# 六、注解
+
+## 1、lombok
+
+@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsContructor。是Lombok插件三种生成不同构造方法的注解，来完成项目中不同构造方法的需求。
+
+- @NoArgsConstructor ： 生成一个无参数的构造方法
+- @AllArgsContructor： ?会生成一个包含所有变量
+- @RequiredArgsConstructor： 也是在类上使用，但是这个注解可以生成带参或者不带参的构造方法。 若带参数，只能是类中所有带有 @NonNull注解的和以final修饰的未经初始化的字段
+
+# 七、零散Web知识
+
+## 1、request
+
+~~~ java
+request.getSession(true)：若存在会话则返回该会话，否则新建一个会话。
+request.getSession(false)：若存在会话则返回该会话，否则返回NULL
+~~~
+
+
+
+
+
