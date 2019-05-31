@@ -332,7 +332,7 @@ kill -9 进程名称
 
 # 五、**Tomcat**
 
-## 1、启动时卡在[localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory
+### 1、启动时卡在[localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory
 
 将java目录的$JAVA_HOME/jre/lib/security/java.security内的securerandom.source参数修改为file:/dev/./urandom
 
@@ -346,8 +346,6 @@ kill -9 进程名称
 ## 3、查看启动日志
 
 tail  -f  /usr/tomcat/apache-tomcat-8.5.41/logs/catalina.out  日志
-
-
 
 # 六、注解
 
@@ -368,7 +366,26 @@ request.getSession(true)：若存在会话则返回该会话，否则新建一�
 request.getSession(false)：若存在会话则返回该会话，否则返回NULL
 ~~~
 
+# 八、lambda
 
+## 1、接口@FunctionalInterface注解
 
+编译期间检验，要实现的方法只有一个，接口里面不止一个方法，一个接口只做一个事情。
 
-
+```java
+@FunctionalInterface
+interface Interface1{
+ int doubleNum(int i);
+ 
+ default int add(int x, int y){
+ return x+y;
+ }
+}
+public class test{
+public static void mian(String[] args){
+	Interface1 i1 = i -> i*2;
+	System.out.println(i1.add(3,7));  //10
+	System.out.println(i1.doubleNum(20));  //40
+}
+}
+```
